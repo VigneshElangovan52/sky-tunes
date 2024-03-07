@@ -2,7 +2,7 @@
 
 Dependencies Required:
 
--React-Redux
--Redux-Toolkit
--Tailwind CSS
--React Router
+-React-Redux v9
+-Redux-Toolkit v2
+-Tailwind CSS v3
+-React Router v6
