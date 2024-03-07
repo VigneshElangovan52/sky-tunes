@@ -8,11 +8,14 @@ const CartSlice = createSlice({
       state.push(action.payload);
     },
     removeSong: (state) => {
-        state.pop();
-      },
+      state.pop();
+    },
+    clearSongs: (state) => {
+      state.length = 0;
+    },
   },
 });
 
-export const { addSong,removeSong} = CartSlice.actions;
+export const { addSong, removeSong, clearSongs } = CartSlice.actions;
 
 export default CartSlice.reducer;
