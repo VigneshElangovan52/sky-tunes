@@ -2,16 +2,20 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const CartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState: {
+    songs: [],
+  },
   reducers: {
     addSong: (state, action) => {
-      state.push(action.payload);
+      state.songs.push(action.payload);
     },
-    removeSong: (state) => {
-      state.pop();
+    removeSong: (state, action) => {
+      state.songs = state?.songs?.filter(
+        (item) => item?.id?.attributes["im:id"] !== action.payload
+      );
     },
     clearSongs: (state) => {
-      state.length = 0;
+      state.songs.length = 0;
     },
   },
 });

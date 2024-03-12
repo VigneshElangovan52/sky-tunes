@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
 
-  const cartItems = useSelector((store)=> store?.cart);
+  const cartItems = useSelector((store)=> store?.cart?.songs);
  
 
   return (
-    <div className="p-1 bg-fuchsia-200 flex justify-between cursor-pointer">
+    <div className="p-1 bg-fuchsia-200 flex justify-between">
       <div className="m-2 py-2 pl-2">
         <Link to="/home">
           <img src={SKY_LOGO} alt="sky-logo" className="w-20 h-10" />

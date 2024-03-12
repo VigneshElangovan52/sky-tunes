@@ -4,7 +4,7 @@ import SongCard from "./SongCard";
 import { clearSongs } from "./store/CartSlice";
 
 const Cart = () => {
-  const items = useSelector((store) => store?.cart);
+  const items = useSelector((store) => store?.cart?.songs);
   const dispatch = useDispatch();
 
   return (
