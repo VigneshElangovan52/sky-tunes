@@ -27,6 +27,15 @@ const SongCard = ({ data, cartFlag }) => {
     else dispatch(addSong(song));
   };
 
+  const removeHandler = (data) => {
+    dispatch(
+      removeSong({
+        id: data?.id?.attributes["im:id"],
+        cost: Number(data["im:price"]?.attributes?.amount),
+      })
+    );
+  };
+
   return (
     <div className="m-3 w-44 h-64 cursor-pointer border border-solid border-stone-400 rounded-lg bg-purple-200 shadow-2xl hover:bg-purple-300">
       <img
@@ -66,7 +75,7 @@ const SongCard = ({ data, cartFlag }) => {
         ) : (
           <button
             className="w-12 mr-2 bg-orange-200 border-stone-500 h-5 cursor-pointer border border-solid rounded-md text-xs font-semibold hover:bg-orange-500"
-            onClick={() => dispatch(removeSong(data?.id?.attributes["im:id"]))}
+            onClick={() => removeHandler(data)}
           >
             Remove
           </button>
